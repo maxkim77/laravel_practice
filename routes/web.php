@@ -5,6 +5,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\clientController;
 use App\Http\Controllers\StringController;
 use App\Http\Controllers\ArrayController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\LoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,11 +24,11 @@ Route::get('/', function () {
 
 Route::get('/home/{name?}', [HomeController::class, 'index'])->name('home.index');
 
-Route::get('/user', function() {
-    $name = '안녕하세요';
-    $age = 20;
-    return view('user', compact('name', 'age'));
-});
+// Route::get('/user', function() {
+//     $name = '안녕하세요';
+//     $age = 20;
+//     return view('user', compact('name', 'age'));
+// });
 
 Route::get('/test1', function() {
     return view('test1', ['name' => '<script>alert("hello");</script>']);
@@ -39,3 +41,6 @@ Route::get('/update-post', [clientController::class, 'updatePost'])->name('posts
 Route::get('/delete-post/{id}', [clientController::class, 'deletePost'])->name('posts.delete');
 Route::get('/string', [StringController::class, 'index'])->name('string.index');
 Route::get('/array', [ArrayController::class, 'index'])->name('array.index');
+
+Route::get('/user', [UserController::class, 'index']);
+Route::get('/login', [LoginController::class, 'index']);
