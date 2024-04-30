@@ -16,19 +16,22 @@ class ArrayController extends Controller
         // });
         // echo $result;
 
-        $array = ['name'=> 'Desk'];
-        $result = Arr::add($array, 'price', 100);
+        // $array = ['name'=> 'Desk'];
+        // $result = Arr::add($array, 'price', 100);
         // print_r($result);
-        $array = ['name'=> 'Desk', 'price' => null];
+        // $array = ['name'=> 'Desk', 'price' => null];
         // print_r($array);
-        $result = Arr::add($array, 'pricex', 100);
-        print_r($result);
+        // $result = Arr::add($array, 'pricex', 100);
+        // print_r($result);
 
         // flatten()
-        $array = ['name'=> 'Joe','language'=>['PHP', 'Ruby']];
-        print_r($array);
+        // $array = ['name'=> 'Joe','language'=>['PHP', 'Ruby']];
+        // print_r($array);
 
-        $result = Arr::flatten($array);
+        // $result = Arr::flatten($array);
+        // print_r($result);
+        $array = ['products' => ['desk' => ['price' => 100]]];
+        $result = Arr::dot($array);
         print_r($result);
     }
 }
