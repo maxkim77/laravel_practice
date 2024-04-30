@@ -44,3 +44,4 @@ Route::get('/array', [ArrayController::class, 'index'])->name('array.index');
 
 Route::get('/user', [UserController::class, 'index']);
 Route::get('/login', [LoginController::class, 'index']);
+Route::get('/login', [LoginController::class, 'loginSubmit'])->name('login.submit');

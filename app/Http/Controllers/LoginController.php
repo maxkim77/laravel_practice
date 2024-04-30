@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
-    // 이 아래에 코드를 입력하시기 바랍니다.
-    // 
+    // 로그인 페이지 보기
+    public function index()
+    {
+        return view('login');
+    }
+
+  
 }
