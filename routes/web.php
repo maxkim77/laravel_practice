@@ -7,6 +7,7 @@ use App\Http\Controllers\StringController;
 use App\Http\Controllers\ArrayController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\SessionController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -44,4 +45,8 @@ Route::get('/array', [ArrayController::class, 'index'])->name('array.index');
 
 Route::get('/user', [UserController::class, 'index']);
 Route::get('/login', [LoginController::class, 'index']);
-Route::get('/login', [LoginController::class, 'loginSubmit'])->name('login.submit');
+Route::post('/login', [LoginController::class, 'loginSubmit'])->name('login.submit');
+
+Route::get('/session/get', [SessionController::class, 'getSessionData'])->name('session.get');
+Route::get('/session/set', [SessionController::class, 'storeSessionData'])->name('session.store');
+Route::get('/session/remove', [SessionController::class, 'deleteSessionData'])->name('session.delete');

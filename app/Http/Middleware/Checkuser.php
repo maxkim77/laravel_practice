@@ -1,12 +1,12 @@
 <?php
 
-namespace {{ namespace }};
+namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class {{ class }}
+class Checkuser
 {
     /**
      * Handle an incoming request.
@@ -15,6 +15,7 @@ class {{ class }}
      */
     public function handle(Request $request, Closure $next): Response
     {
+        echo "Checkuser Middleware<br>미들웨어가 이 경로에 적용되었습니다.";
         return $next($request);
     }
 }
