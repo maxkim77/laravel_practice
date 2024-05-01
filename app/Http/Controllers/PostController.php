@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\Post;
 
 class PostController extends Controller
 {
@@ -16,8 +17,11 @@ class PostController extends Controller
         return view('posts', compact('posts'));
     }
 
-    public function addPost()
+    public function getAllPostUsingModel()
     {
-        return view('add-post');
+        $posts = Post::all();
+        // return $posts;
+        return view('all-view', compact('posts'));
     }
+
 }

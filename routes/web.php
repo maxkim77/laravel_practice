@@ -53,3 +53,5 @@ Route::get('/session/set', [SessionController::class, 'storeSessionData'])->name
 Route::get('/session/remove', [SessionController::class, 'deleteSessionData'])->name('session.delete');
 
 Route::get('/posts', [PostController::class, 'getAllPost'])->name('posts.getallpost');
+
+Route::get('/all-posts', [PostController::class, 'getAllPostUsingModel']);
