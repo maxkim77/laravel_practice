@@ -8,6 +8,7 @@ use App\Http\Controllers\ArrayController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SessionController;
+use App\Http\Controllers\PostController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -50,3 +51,5 @@ Route::post('/login', [LoginController::class, 'loginSubmit'])->name('login.subm
 Route::get('/session/get', [SessionController::class, 'getSessionData'])->name('session.get');
 Route::get('/session/set', [SessionController::class, 'storeSessionData'])->name('session.store');
 Route::get('/session/remove', [SessionController::class, 'deleteSessionData'])->name('session.delete');
+
+Route::get('/posts', [PostController::class, 'getAllPost'])->name('posts.getallpost');
