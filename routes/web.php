@@ -26,6 +26,12 @@ Route::get('/', function () {
 
 Route::get('/home/{name?}', [HomeController::class, 'index'])->name('home.index');
 
+Route::get('/products/{id?}', function($id = null){
+    return 'Product id is '. $id;
+})->where('id', '[0-9]+');
+// 'a-zA-Z0-9'
+// [0-9]+
+
 // Route::get('/user', function() {
 //     $name = '안녕하세요';
 //     $age = 20;
