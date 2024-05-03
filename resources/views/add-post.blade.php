@@ -24,6 +24,8 @@
             </div>
             <div class="mt-2">
                 <button class="btn btn-primary">등록</button>
+                <a href ="{{ route('posts.getallpost') }}" class="btn btn-primary">목록</a>
+
             </div>
         </form>
     </div>
