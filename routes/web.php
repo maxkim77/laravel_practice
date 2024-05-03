@@ -8,6 +8,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\TestUserController;
+
 // use App\Http\Controllers\PhotoController;
 /*
 |--------------------------------------------------------------------------
@@ -63,3 +65,7 @@ Route::get('/all-posts', [PostController::class, 'getAllPostUsingModel']);
 
 
 // Route::resource('photos', PhotoController::class);
+
+
+Route::get('/select-user-procedure', [TestUserController::class, 'selectUser']);
+Route::get('/select-user-orm', [TestUserController::class, 'selectUserOrm']);
