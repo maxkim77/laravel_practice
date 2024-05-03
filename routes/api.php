@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\clientController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,3 +28,9 @@ Route::get('/products/{id?}', function($id = null){
 })->where('id', '[0-9]+');
 // 'a-zA-Z0-9'
 // [0-9]+
+
+Route::get('/posts/all', [clientController::class, 'getAllPost'])->name('posts.getallposts');
+Route::get('/posts/{id}', [clientController::class, 'getPostById'])->name('posts.getpostbyid');
+Route::get('/add-post', [clientController::class, 'addPost'])->name('posts.addpost');
+Route::get('/update-post', [clientController::class, 'updatePost'])->name('posts.update');
+Route::get('/delete-post/{id}', [clientController::class, 'deletePost'])->name('posts.delete');
