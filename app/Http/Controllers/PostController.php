@@ -1,5 +1,5 @@
 <?php
-
+// PHP 코드는 HTML 코드의 뒤에 위치합니다.
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -8,20 +8,31 @@ use App\Models\Post;
 
 class PostController extends Controller
 {
-    // 이 아래에 코드를 입력하시기 바랍니다.
-    // 
-
     public function getAllPost()
     {
         $posts = DB::table('posts')->get();
         return view('posts', compact('posts'));
     }
 
+    public function addPost()
+    { 
+        return view('add-post');
+    }
+
+    public function addPostSubmit(Request $request)
+    {
+        DB::table('posts')->insert([
+            'subject' => $request->subject,
+            'content' => $request->content,
+        ]);
+
+        return back()->with('post_created', 'Post has been created successfully!');
+    }
+
     public function getAllPostUsingModel()
     {
         $posts = Post::all();
-        // return $posts;
         return view('all-view', compact('posts'));
     }
-
 }
+?>
