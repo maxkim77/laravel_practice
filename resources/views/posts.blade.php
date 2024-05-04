@@ -10,7 +10,7 @@
 <body>
     <div class="continer w-50 mt-5">
         @if(Session::has('post_deleted'))
-        <div class="alert alert-success" role="alert">{{Sesssion::get('post_deleted')}}</div>
+        <div class="alert alert-success" role="alert">{{ Session::get('post_deleted') }}</div>
         @endif
         <table class ="table">
             <thead>

@@ -19,7 +19,7 @@
             {{$post->content}}
         </div>
         <div class="mb-2">
-            <a href="" class="btn btn-primary">목록</a>
+            <a href="{{route('posts.getallpost')}}" class="btn btn-primary">목록</a>
          </div>
     </div>
 </body>
