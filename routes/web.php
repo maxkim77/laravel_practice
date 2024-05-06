@@ -26,13 +26,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home/{name?}', [HomeController::class, 'index'])->name('home.index');
-
-Route::get('/products/{id?}', function($id = null){
-    return 'Product id is '. $id;
-})->where('id', '[0-9]+');
-// 'a-zA-Z0-9'
-// [0-9]+
 
 Route::get('/user', function() {
     $name = '안녕하세요';
@@ -43,6 +36,9 @@ Route::get('/user', function() {
 Route::get('/test1', function() {
     return view('test1', ['name' => '<script>alert("hello");</script>']);
 });
+
+
+Route::get('/home/{name?}', [HomeController::class, 'index'])->name('home.index');
 
 
 Route::get('/string', [StringController::class, 'index'])->name('string.index');

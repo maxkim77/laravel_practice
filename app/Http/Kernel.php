@@ -57,7 +57,7 @@ class Kernel extends HttpKernel
             // eloquent 모델에 결합시켜 루트에 이용된 id등으로 부터 데이터베이스 검색을 수행해
             // 컨트롤러 클래스나 루트등에서 이용할수 있도록 하는 미들웨어
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
-           // \App\Http\Middleware\Checkuser::class,
+        //    \App\Http\Middleware\Checkuser::class,
 
         ],
 
