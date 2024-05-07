@@ -35,13 +35,15 @@ class UserController extends Controller
         // HTTP 상태 코드 201(Created)와 함께 응답 생성
         // 'Content-Type' 헤더를 'text/html'로 명시적으로 설정
         return response($content, 201)
-                ->header('Content-Type', 'text/html')
-                ->header('Cache-Control', 'no-store, no-cache, must-revalidate, private')
-                // 웹 페이지에서 스크립트, 스타일시트, 이미지, 비디오 등의 리소스가 로드될 수 있는 출처를 제한함으로써 XSS(크로스 사이트 스크립팅) 공격을 방지할 수 있습니다.
-                ->header('Content-Security-Policy', "default-src 'self'; img-src https://*; child-src 'none';")
-                // 브라우저의 XSS 필터를 활성화하여 사용자로부터의 스크립팅 공격을 차단합니다.
-                ->header('X-XSS-Protection', '1; mode=block')
-                // 웹 사이트가 HTTPS를 통해서만 접속되도록 강제합니다. 이는 중간자 공격을 방지하는 데 유용합니다.
-                ->header('Strict-Transport-Security', 'max-age=31536000; includeSubDomains');
+        // 'Content-Type' 헤더를 설정하여 응답의 MIME 유형을 'text/html'로 명시합니다.
+        ->header('Content-Type', 'text/html')
+        // 'Cache-Control' 헤더를 통해 캐시 방지 정책을 설정합니다. 저장되지 않고, 인증된 사용자만 콘텐츠에 접근할 수 있도록 합니다.
+        ->header('Cache-Control', 'no-store, no-cache, must-revalidate, private')
+        // 'Content-Security-Policy' 헤더를 설정하여 XSS 공격으로부터 보호합니다. 이 정책은 스크립트, 이미지 등의 리소스 로드를 현재 도메인('self')으로 제한하며, 일부 외부 도메인에서 이미지를 로드할 수 있도록 합니다.
+        ->header('Content-Security-Policy', "default-src 'self'; img-src https://*; child-src 'none';")
+        // 'X-XSS-Protection' 헤더를 설정하여 브라우저의 XSS 필터를 활성화시킵니다. 이는 사용자로부터의 스크립트 공격을 차단합니다.
+        ->header('X-XSS-Protection', '1; mode=block')
+        // 'Strict-Transport-Security' 헤더를 설정하여 HTTPS를 통한 접속만 허용합니다. 이는 중간자 공격을 방지하는 데 유용합니다.
+        ->header('Strict-Transport-Security', 'max-age=31536000; includeSubDomains');
     }
 }

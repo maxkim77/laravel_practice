@@ -30,14 +30,14 @@ Route::get('/', function () {
 파라미터가 있는 라우터 반환
 매개변수가 비었으면 id변수는 null
 */
-Route::get('/users/{id}', function($id){
-    return 'User id is '. $id;
+// Route::get('/users/{id}', function($id){
+//     return 'User id is '. $id;
+// });
+
+
+Route::get('/users/{name?}', function($name = null){
+    return 'Hi, '. $name;
 });
-
-
-// Route::get('/users/{name?}', function($name = null){
-//     return 'Hi, '. $name;
-// })->where('name', '[a-zA-Z]+');
 // ->where('name', '[a-zA-Z]+');
 
 
