@@ -74,3 +74,7 @@ Route::get('/all-posts', [PostController::class, 'getAllPostUsingQuery']);
 
 Route::get('/select-user-procedure', [TestUserController::class, 'selectUser']);
 Route::get('/select-user-orm', [TestUserController::class, 'selectUserOrm']);
+
+
+// use App\Http\Controllers\PhotoController;
+// Route::resource('photos', PhotoController::class);

@@ -34,7 +34,7 @@ class UserController extends Controller
 
         // HTTP 상태 코드 201(Created)와 함께 응답 생성
         // 'Content-Type' 헤더를 'text/html'로 명시적으로 설정
-        return response($content, 201)
+        return response($content, 202)
                 ->header('Content-Type', 'text/html')
                 ->header('Cache-Control', 'no-store, no-cache, must-revalidate, private')
                 // 웹 페이지에서 스크립트, 스타일시트, 이미지, 비디오 등의 리소스가 로드될 수 있는 출처를 제한함으로써 XSS(크로스 사이트 스크립팅) 공격을 방지할 수 있습니다.
