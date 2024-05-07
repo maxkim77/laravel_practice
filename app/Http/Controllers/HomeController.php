@@ -12,7 +12,7 @@ class HomeController extends Controller
     // {
     //     return 'Hi, from HomeController';
     // }
-    // // 'index' 함수는 이름을 선택적으로 받을 수 있으며 문자열을 반환
+    // 'index' 함수는 이름을 선택적으로 받을 수 있으며 문자열을 반환
     public function index($name = null): string
     {
         // 이름이 제공되면 그 이름을 포함하여 인사말을 반환

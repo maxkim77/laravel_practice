@@ -69,12 +69,21 @@ Route::post('/update-post', [PostController::class, 'updatePost'])->name('post.u
 Route::get('/delete-post/{id}', [PostController::class, 'deletePost'])->name('post.delete');
 Route::get('/inner-join', [PostController::class, 'innerJoinClause'])->name('post.innerjoin');
 Route::get('/all-posts', [PostController::class, 'getAllPostUsingQuery']);
+// use App\Http\Controllers\PhotoController;
 
 // Route::resource('photos', PhotoController::class);
 
 Route::get('/select-user-procedure', [TestUserController::class, 'selectUser']);
 Route::get('/select-user-orm', [TestUserController::class, 'selectUserOrm']);
 
+Route::get('/livewire', function() {
+    return view('livewire');
+});
 
-// use App\Http\Controllers\PhotoController;
-// Route::resource('photos', PhotoController::class);
+Route::get('/livewirepractice', function() {
+    return view('livewire.livewirepractice');
+});
+
+Route::get('/practice', function() {
+    return view('practice');
+});

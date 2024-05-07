@@ -35,9 +35,9 @@ Route::get('/', function () {
 // });
 
 
-// Route::get('/users/{name?}', function($name = null){
-//     return 'Hi, '. $name;
-// })->where('name', '[a-zA-Z]+');
+Route::get('/users/{name?}', function($name = null){
+    return 'Hi, '. $name;
+});
 // ->where('name', '[a-zA-Z]+');
 
 
