@@ -74,6 +74,8 @@ $kernel = $app->make(Kernel::class);
 
 $response = $kernel->handle(
     $request = Request::capture()
+//현재 HTTP 요청을 포착하고, 이를 Request 객체로 만들어 변수 $request에 저장하는 기능
+// Laravel에서는 HTTP 요청과 관련된 모든 정보를 처리하고 접근할 때 Request 클래스를 사용하는데, 이 클래스는 클라이언트에서 서버로 보낸 데이터를 캡슐화
 )->send();
 
 $kernel->terminate($request, $response);

@@ -101,7 +101,7 @@ class Kernel extends HttpKernel
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         // 사용자가 암호화된 페이지에 액세스할 때 패스워드를 확인합니다.
         'password.confirm' => \Illuminate\Auth\Middleware\RequirePassword::class,
-        // 사전지식적 요청: 페이지 프리로드를 통해 사용자가 요청하기 전에 서버가 요청을 처리하는 방식의 미들웨어입니다.
+        // 페이지 프리로드를 통해 사용자가 요청하기 전에 서버가 요청을 처리하는 방식의 미들웨어입니다.
         'precognitive' => \Illuminate\Foundation\Http\Middleware\HandlePrecognitiveRequests::class,
         // 요청이 서명되지 않은 경우, 요청이 거부됩니다.
         'signed' => \App\Http\Middleware\ValidateSignature::class,
