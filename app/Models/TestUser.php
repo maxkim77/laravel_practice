@@ -8,6 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 class TestUser extends Model
 {
     use HasFactory;
-    protected $table = 'testusers';  // 연결할 테이블 지정
-    protected $fillable = ['username', 'email'];  // 대량 할당 가능한 속성 지정
+
+    protected $table = 'testusers';
+    protected $fillable = ['username', 'email'];
+
+    public function gameCharacters()
+    {
+        return $this->hasMany(GameCharacter::class, 'user_id');
+    }
+
+    public function avatarOrder()
+    {
+        return $this->hasOne(AvatarOrder::class, 'user_id');
+    }
 }

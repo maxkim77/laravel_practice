@@ -73,7 +73,7 @@ Route::get('/all-posts', [PostController::class, 'getAllPostUsingQuery']);
 
 // Route::resource('photos', PhotoController::class);
 
-Route::get('/select-user-procedure', [TestUserController::class, 'selectUser']);
+Route::get('/select-user-procedure', [TestUserController::class, 'selectUserProcedure']);
 Route::get('/select-user-orm', [TestUserController::class, 'selectUserOrm']);
 
 Route::get('/livewire', function() {
