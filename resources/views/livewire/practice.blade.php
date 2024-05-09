@@ -1,7 +1,7 @@
 <div>
     <h1>{{ $post }}</h1> 
     <p>-----구분 줄--------</p>
-    
+    <!--ddd  -->
     {{-- 
     <input type="text" wire:model="post">
     이 입력 필드는 wire:model="post" 디렉티브를 사용하여 Livewire 컴포넌트의 $post 프로퍼티와 양방향 데이터 바인딩을 설정합니다.

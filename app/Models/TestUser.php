@@ -18,7 +18,8 @@ class TestUser extends Model
     }
 
     public function avatarOrder()
-    {
+    {  
         return $this->hasOne(AvatarOrder::class, 'user_id');
     }
 }
+
