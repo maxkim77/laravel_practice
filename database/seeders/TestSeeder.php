@@ -37,7 +37,7 @@ class TestSeeder extends Seeder
 
             // 테스트 아바타 주문 생성
             $avatarOrder = new AvatarOrder([
-                'avatar_ordered' => $faker->word,
+                'avatar_ordered' => rand(1, 10),
                 'order_date' => $faker->dateTimeThisYear()
             ]);
             $user->avatarOrder()->save($avatarOrder);
