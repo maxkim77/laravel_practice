@@ -6,7 +6,7 @@
     <input type="text" wire:model="post">
     이 입력 필드는 wire:model="post" 디렉티브를 사용하여 Livewire 컴포넌트의 $post 프로퍼티와 양방향 데이터 바인딩을 설정합니다.
     --}}
-    <input type="text" wire:model.live="post"> 
+    <input type="text" wire:model="post"> 
     {{-- <input type="text" wire:model.live="post"> --}}
     {{-- 사용자가 입력 필드에 텍스트를 입력하면, 그 값이 실시간으로 Livewire 컴포넌트의 $post 변수에 저장됩니다. --}}
     <p>-----구분 줄--------</p>
@@ -43,10 +43,5 @@
         <button type="submit">Submit</button>
     </form>
 </div>
-{{-- 
-Livewire 컴포넌트에서 HTML 주석이 그대로 노출되는 것을 방지하려면 다음과 같이 처리할 수 있습니다.
-
-1. PHP Blade 템플릿 주석 사용
-HTML 주석(<!-- -->) 대신 블레이드 주석({{-- --}})을 사용
-블레이드 주석은 서버 측에서만 존재하며, 최종 HTML 결과물에는 포함되지 않음.
---}}
+{{-- Livewire 컴포넌트에서 HTML 주석이 그대로 노출되는 것을 방지하려면 블레이드 주석을 사용해야함
+    블레이드 주석은 서버 측에서만 존재하며, 최종 HTML 결과물에는 포함되지 않음.--}}
