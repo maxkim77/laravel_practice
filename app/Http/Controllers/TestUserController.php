@@ -26,23 +26,21 @@ class TestUserController extends Controller
     // ORM 사용
     public function selectUserOrm()
     {
-        $username = 'JohnDoe';
-
         // ORM 실행 시간 측정 시작
         $startTime = microtime(true);
-
+    
         // ORM을 통해 사용자 정보 조회
-        $user = \App\Models\TestUser::where('username', $username)->with('gameCharacters', 'avatarOrder')->first();
-
+        $users = \App\Models\TestUser::with('gameCharacters', 'avatarOrder')->get();
+    
         // ORM 실행 시간 측정 종료
         $endTime = microtime(true);
-
+    
         // ORM 실행 시간 계산
         $executionTimeOrm = $endTime - $startTime;
-
+    
         // ORM 실행 시간 포맷팅
         $formattedExecutionTimeOrm = sprintf("%.6f seconds", $executionTimeOrm);
-
-        return view('user.select', compact('formattedExecutionTimeOrm', 'user'));
+    
+        return view('user.select', compact('formattedExecutionTimeOrm', 'users'));
     }
 }

@@ -80,10 +80,6 @@ Route::get('/livewire', function() {
     return view('livewire');
 });
 
-Route::get('/livewirepractice', function() {
-    return view('livewire.livewirepractice');
-});
-
 Route::get('/practice', function() {
     return view('practice');
 });

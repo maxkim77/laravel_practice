@@ -4,12 +4,12 @@
     <title>Execution Time</title>
 </head>
 <body>
-    <h1>Procedure Execution Time: {{ $formattedExecutionTimeProcedure ?? 'N/A' }}</h1>
-    <h1>ORM Execution Time: {{ $formattedExecutionTimeOrm ?? 'N/A' }}</h1>
+    <h1>프로시저 실행 시간: {{ $formattedExecutionTimeProcedure ?? 'N/A' }}</h1>
+    <h1>ORM 실행 시간: {{ $formattedExecutionTimeOrm ?? 'N/A' }}</h1>
 
     @if(isset($result))
-        <h2>Procedure Result:</h2>
-        <table border="1">
+        <h2>프로시저 결과:</h2>
+        <table>
             <thead>
                 <tr>
                     <th>Username</th>
@@ -35,9 +35,9 @@
         </table>
     @endif
 
-    @if(isset($user))
-        <h2>ORM Result:</h2>
-        <table border="1">
+    @if(isset($users))
+        <h2>ORM 결과:</h2>
+        <table>
             <thead>
                 <tr>
                     <th>Username</th>
@@ -49,16 +49,30 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach($user->gameCharacters as $character)
-                    <tr>
-                        <td>{{ $user->username }}</td>
-                        <td>{{ $user->email }}</td>
-                        <td>{{ $character->character_name }}</td>
-                        <td>{{ $character->level }}</td>
-                        <td>{{ $user->avatarOrder->avatar_ordered ?? 'N/A' }}</td>
-                        <td>{{ $user->avatarOrder->order_date ?? 'N/A' }}</td>
-                    </tr>
-                @endforeach
+            @foreach ($users as $user)
+    @foreach($user->gameCharacters as $character)
+        <tr>
+            <td>{{ $user->username }}</td>
+            <td>{{ $user->email }}</td>
+            <td>{{ $character->character_name }}</td>
+            <td>{{ $character->level }}</td>
+            <td>
+                @if ($user->avatarOrder)
+                    {{ $user->avatarOrder->avatar_ordered }}
+                @else
+                    N/A
+                @endif
+            </td>
+            <td>
+                @if ($user->avatarOrder)
+                    {{ $user->avatarOrder->order_date }}
+                @else
+                    N/A
+                @endif
+            </td>
+        </tr>
+    @endforeach
+@endforeach
             </tbody>
         </table>
     @endif
