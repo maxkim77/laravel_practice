@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 */
 // 기본 컨트롤러 클래스를 상속받는 HomeController 클래스 선언
 // 컨트롤러 클래스는 라라벨의 base controller 클래스를 상속받아야 합니다. <-Controller.php 확인! 
+// http://127.0.0.1:8000/home/
 class HomeController extends Controller
 {
     // public function index()

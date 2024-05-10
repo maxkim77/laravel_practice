@@ -5,6 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Http;
 /* 외부 API인 JSONPlaceholder를 사용하여 CRUD(Create, Read, Update, Delete) 작업을 수행하는 실습 
 컨트롤러를 통해 CRUD 작업을 제어할 수 있습니다.
+http://127.0.0.1:8000/api/posts/all
+http://127.0.0.1:8000/api/posts/1
+http://127.0.0.1:8000/api/add-post
+http://127.0.0.1:8000/api/update-post
+http://127.0.0.1:8000/api/delete-post/1
 */
 class clientController extends Controller
 {

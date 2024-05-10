@@ -12,7 +12,7 @@ class TestSeeder extends Seeder
 {
     /**
      * Run the database seeds.
-     *
+     * php artisan make:seeder TestSeeder
      * @return void
      */
     public function run()

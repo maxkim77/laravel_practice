@@ -5,7 +5,6 @@ use Illuminate\Http\Request;
 
 /*define('LARAVEL_START', microtime(true)); 는 LARAVEL_START라는 이름의 상수를 정의하고, 현재의 마이크로타임을 값으로 설정
 이 상수는 애플리케이션의 로딩 시간을 측정하는 데 사용
-오토 로딩은 클래스 파일들을 자동으로 로드하는 기능
 */
 define('LARAVEL_START', microtime(true));
 
@@ -29,7 +28,7 @@ Maintenance Check (유지보수모드 확인):
  점검모드 종료
  php artisan up
  점검모드 우회
-php artisan down --secret="1630542a-246b-4b66-afa1-dd72a4c43515"
+php artisan down --secret="1630542a-246b-4b66-afa1-dd72a4c4351666545545"
 resources/views/errors/503.blade.php
 
 */

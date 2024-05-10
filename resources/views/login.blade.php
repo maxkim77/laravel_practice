@@ -9,6 +9,7 @@
 </head>
 <body class ="d-flex">
 <form method="post" class= "mt-5 pt-5 m-auto" autocomplete="off" action="{{route('login.submit')}}">
+  {{-- 자동으로 CSRF 토큰을 생성하고 폼에 숨겨진 입력 필드로 삽입 --}}
     @csrf
   <div class="mb-3" >
     <label for="exampleInputEmail1" class="form-label">Email address</label>
