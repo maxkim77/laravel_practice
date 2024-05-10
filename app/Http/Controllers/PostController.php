@@ -15,7 +15,7 @@ class PostController extends Controller
         //compact 함수는 변수명과 변수값이 동일한 연관 배열을 생성
     }
 
-    // 위에서 controller에서 쿼리빌더를 통해 데이터를 가져오는 방법을 썼다면 밑에서는 모델을 통해 데이터를 가져오는 방법을 사용한다.
+    // 위에서 controller에서 쿼리빌더를 통해 데이터를 가져오는 방법을 썼다면 밑에서는 엘로퀀트 모델을 통해 데이터를 가져오는 방법을 사용한다.
     public function getAllPostUsingModel()
     {
         $posts = Post::all();
@@ -83,15 +83,7 @@ class PostController extends Controller
         $post->delete();
         return back()->with('post_deleted', 'Post has been deleted successfully!');
     }    // with 함수는 세션에 데이터를 저장하는데 사용: 키값은 템플릿에서 불러올때 사용 하며, 값은 저장할 데이터 혹은 메시지를 의미
-    // public function innerJoinClause()
-    // {
-    //     $posts = DB::table('users')
-    //         ->select('posts.id','users.name', 'posts.subject', 'posts.content','users.email')
-    //         ->join('posts', 'users.id', '=', 'posts.user_id')
-    //         ->get();
-    
-    //     return view('join-view', compact('posts'));
-    // }
+
    
 }
 ?>

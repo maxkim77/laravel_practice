@@ -5,10 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
-/* 컨트롤러는 기본 컨트롤러 클래스를 필수로 상속 받지 않아도 작동합니다. 
-미들웨어(middleware) 및 권한 부여(authorize)와 유효성 검사(validate) 기능을 사용할 수 있도록 하는 클래스입니다.
-특히 유효성검사는 컨트롤러에서 사용자의 입력값을 검증하는데 사용됩니다.
-또한 유효성을 검사함으로써 애플리케이션에 유효하지 않은 또는 해로운 데이터가 들어오는 것을 방지할 수 있습니다.(xss, sql injection 등)
+/* 
+Rotues에는 컨트롤러 클래스의 사용을 강제하지는 않으므로 
+사전에 routes 디렉토리의 web.php파일의 uri와 대응하는 클래스라면 
+어떤 클래스를 실행하더라도 응답을 반환 할수 있음
+
+
+하지만 컨트롤러를 사용한다면 컨트롤러는 URL에 대응하는 엑션 메서드를 가지고 있음
+이러한 액션 메서드를 통해 특정 HTTP 요청에 대한 로직을 처리하고, 적절한 응답을 구성하여 반환합니다.
+ 각 액션 메서드는 특정 라우트와 연결되어 있으며, 라우트 정의에 따라 호출됩니다.
+
  */
 class Controller extends BaseController
 {

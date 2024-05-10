@@ -35,7 +35,7 @@ class UserController extends Controller
 
         // HTTP 상태 코드 201(Created)와 함께 응답 생성
 
-        return response($content, 201)
+        return response($content, 204)
         /* 'Content-Type' 헤더를 설정하여 응답의 MIME 유형을 'text/html'로 명시.
             - Multipurpose Internet Mail Extensions 다목적 인터넷 메일 확장 
             - 다양한 종류의 데이터를 표현하고 전송하는데 사용되는 표 준형식
@@ -63,12 +63,7 @@ class UserController extends Controller
         /* 'X-XSS-Protection' 헤더를 설정하여 브라우저의 XSS 필터를 활성화, 이는 사용자로부터의 스크립트 공격을 차단
             '1; mode=block': 브라우저 내장 xss필터 활성화, xss 공격을 감지하면 페이지 렌더링을 차단하도록 지시
          */
-        ->header('X-XSS-Protection', '1; mode=block')
-        /* 'Strict-Transport-Security' 헤더를 설정하여 HTTPS를 통한 접속만 허용
-            중간자 공격을 방지하는 데 유용
-            - max-age=31536000 브라우저는 이 헤더를 수신한 후 1년 동안 해당 사이트에 대한 HTTPS 강제를 기억
-            - includeSubDomains : 모든 서브도메인에서도 HTTPS강제가 적용  
-        */
-        ->header('Strict-Transport-Security', 'max-age=31536000; includeSubDomains');
+        ->header('X-XSS-Protection', '1; mode=block');
+
     }
 }
